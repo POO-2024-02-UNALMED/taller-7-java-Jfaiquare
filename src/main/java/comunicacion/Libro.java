@@ -38,8 +38,7 @@ public class Libro extends Escrito {
         this.edicion = edicion;
     }
 
-    @Override
-    public String interpretacion() {
+    public String getInterpretacion() {
         return interpretacion;
     }
 
@@ -48,19 +47,17 @@ public class Libro extends Escrito {
     }
 
     @Override
-    public int palabrasTotales(int palabrasPorPagina) {
-        return getPaginas() * palabrasPorPagina;
+    public int palabrasTotales(int palabrasPagina) {
+        return getPaginas() * palabrasPagina * 2;
+    }
+
+    @Override
+    public String interpretacion() {
+        return interpretacion;
     }
 
     @Override
     public String toString() {
-        return String.format("%s\n%s\n%s\n%d\n%s\n%s\n%s",
-                getOrigen(),
-                getTitulo(),
-                getAutor(),
-                getPaginas(),
-                co_autor,
-                editorial,
-                edicion);
+        return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + co_autor + "\n" + editorial + "\n" + edicion;
     }
 }
